@@ -48,7 +48,7 @@ return [
 
     //'expiration' => null,
     'expiration' => 2  ,           
-    'rt_expiration' => 6,
+    'rt_expiration' => 20,
 
     /*
     |--------------------------------------------------------------------------

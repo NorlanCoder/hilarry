@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Todo;
-use Illuminate\Auth\AuthenticationException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -14,16 +13,13 @@ class TodoController extends Controller
      */
     public function index()
     {
-        try {
-            $products = Todo::all();
-            return response()->json([
-                'status' => true,
-                'message' => 'Voici toutes vos tâches',
-                'products' => $products
-            ]);
-        } catch (AuthenticationException $exception) {
-            return response()->json(['message' => 'Unauthorized'], 401);
-        }
+        
+        $products = Todo::all();
+        return response()->json([
+            'status' => true,
+            'message' => 'Voici toutes vos tâches',
+            'products' => $products
+        ]);
     }
 
     /**
